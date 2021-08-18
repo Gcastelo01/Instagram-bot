@@ -19,7 +19,7 @@ class InstaBot():
 
       path: caminho para o arquivo .txt onde estão as strings com o texto que será comentado, separado por ponto-e-vírgula (;)
     """
-    self.browser = Firefox()
+    self.browser = Firefox(executable_path='./include/geckodriver')
     self.__playersList =  open(path).read().split(';')
     self.__link = link
     self.__login = login
