@@ -11,6 +11,14 @@ Além disso, é necessário ter o arquivo texto com todos os comentários que se
     @Fábio; @Stênio; @Weverton; @RaúlCáceres; @MarcoAntônio;
 
 (No caso o exemplo considera que estamos marcando usuários, mas qualquer coisa colocada entre os ponto-e-vírgula será comentada.)
+Se quiséssemos marcar duas contas ao invés de uma:
+
+    @Fábio @Stênio; @Weverton @RaúlCáceres; 
+    
+E por ai vai...
+Como regra geral:
+
+    'Este é um comentário'; 'Esse é outro'; 'Aqui é mais um';
 
 <h2>Execução do programa</h2>
 Basta rodar o comando a seguir em um terminal:
