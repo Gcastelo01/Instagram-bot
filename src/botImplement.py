@@ -89,7 +89,7 @@ class InstaBot():
       sleep(randrange(25, 35))
       
       if counter == 4:
-        sleep(60)
+        sleep(45)
         counter = 0
 
     
