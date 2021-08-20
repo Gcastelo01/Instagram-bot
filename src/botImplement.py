@@ -1,5 +1,4 @@
 from selenium.webdriver import Firefox
-from selenium.common import exceptions
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 from random import randrange
@@ -58,6 +57,7 @@ class InstaBot():
     print("[ RELATÓRIO FINAL ] \n\n\n")
     print(f"NÚMERO DE COMENTÁRIOS: {self.__numberOfComments}\n")
     input('PRESSIONE [ENTER] PARA SAIR')
+    # self.__sendmail__()
     self.browser.quit()
 
 
@@ -74,22 +74,25 @@ class InstaBot():
     __comment_box.click()
 
     __comment_box = self.browser.find_element_by_class_name('Ypffh')
-    counter = 0
+    __counter = 0
 
-    for name in self.__playersList:
-      __comment_box.send_keys(name)
-      __comment_box.send_keys(Keys.ENTER)
-      
-      counter += 1
-      self.__numberOfComments += 1
-
-      if (name == self.__playersList[-1]):
-        self.__final_report()
+    try:
+      for name in self.__playersList:
+        __comment_box.send_keys(name)
+        __comment_box.send_keys(Keys.ENTER)
         
-      sleep(randrange(25, 35))
-      
-      if counter == 4:
-        sleep(45)
-        counter = 0
+        __counter += 1
+        self.__numberOfComments += 1
 
-    
+        if (name == self.__playersList[-1]):
+          self.__final_report()
+          
+        sleep(randrange(25, 35))
+        
+        if counter == 4:
+          sleep(45)
+          counter = 0
+
+    except KeyboardInterrupt():
+      print("\nOperação interrompida pelo usuário!\n")
+      self.__final_report()

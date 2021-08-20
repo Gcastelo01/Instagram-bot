@@ -2,7 +2,7 @@ import src.botImplement as bot
 
 
 link = str(input('Cole o link da postagem aqui: '))
-username = str(input("Digite seu nome de usuário ou e-mail do instagram: "))
+username = str(input("Digite seu  e-mail do instagram: "))
 password = str(input('Digite sua senha: '))
 caminho = str(input('Cole o caminho para o arquivo .txt com os termos a serem comentados: '))
 
